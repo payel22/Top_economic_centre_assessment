@@ -1,0 +1,22 @@
+# Raw raster data (too large for GitHub)
+*.tif
+*.tif.aux.xml
+
+# Large SHRUG source files
+data/shrug-pc11-village-poly-gpkg/village_modified.gpkg
+data/shrug-antyodaya-dta/antyodaya_shrid.dta
+data/shrug-facebook-rwi-dta/facebook_rwi_shrid.dta
+data/shrug-facebook-pop-csv/facebook_pop_shrid.csv
+shrug-viirs-annual-dta/viirs_annual_shrid.dta
+
+# Plain CSV (pushed as .gz instead)
+output/all_villages_scored.csv
+
+# Zips
+*.zip
+
+# System
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
