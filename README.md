@@ -106,8 +106,76 @@ Step 2 prevents large states (Uttar Pradesh, Madhya Pradesh, Rajasthan) from mon
 
 ### Outputs
 
+#### Data files
+
 | File | Description |
 |---|---|
-| `output/all_villages_scored.csv` | All 585,257 villages with raster extractions, log-change values, corroboration flags, and normalised scores |
+| `output/all_villages_scored.csv.gz` | All 585,257 villages with raster extractions, log-change values, corroboration flags, and normalised scores (gzip-compressed) |
 | `output/top100_villages.csv` | Top 100 villages with all score components, ranks, and equal-weights sensitivity flag |
-| `output/top100_villages.gpkg` | Top 100 with original polygon geometry for mapping |
+| `output/top100_villages.gpkg` | Top 100 with original polygon geometry for mapping (weighted composite) |
+| `output/top100_equal_weights.gpkg` | Top 100 with original polygon geometry for mapping (equal-weights composite) |
+
+#### Maps — Top 100 spatial comparison
+
+| File | Description |
+|---|---|
+| `output/map_01_weighted_top100.png` | India map: top 100 villages by weighted composite score |
+| `output/map_02_equal_weights_top100.png` | India map: top 100 villages by equal-weights composite score |
+| `output/map_03_side_by_side.png` | Side-by-side comparison of both scoring methods |
+| `output/map_04_overlap_divergence.png` | Villages unique to each method vs. overlap between both |
+| `output/map_05_state_breakdown.png` | Bar chart of top 100 villages per state by method |
+| `output/map_06_score_scatter.png` | Scatter plot of weighted vs. equal-weight scores |
+
+#### EDA plots — Nighttime Lights (VIIRS)
+
+| File | Description |
+|---|---|
+| `output/ntl_01_maps_2021_2025.png` | Side-by-side India maps of NTL 2021 and 2025 |
+| `output/ntl_02_change_absolute.png` | Absolute change in NTL (2021–2025) |
+| `output/ntl_03_change_pct.png` | Percentage change in NTL (2021–2025) |
+| `output/ntl_04_shrid_distribution.png` | Distribution of shrid-level NTL values |
+| `output/ntl_05_cdf_scatter.png` | CDF and scatter of NTL values |
+
+#### EDA plots — GHS Built-up Surface
+
+| File | Description |
+|---|---|
+| `output/blt_01_maps_2020_2025.png` | Side-by-side India maps of built-up area 2020 and 2025 |
+| `output/blt_02_change_absolute.png` | Absolute change in built-up surface (2020–2025) |
+| `output/blt_03_change_pct.png` | Percentage change in built-up surface (2020–2025) |
+| `output/blt_04_distribution.png` | Distribution of built-up values |
+
+#### EDA plots — GHS Population
+
+| File | Description |
+|---|---|
+| `output/pop_01_maps_2020_2025.png` | Side-by-side India maps of population 2020 and 2025 |
+| `output/pop_02_change_absolute.png` | Absolute change in population (2020–2025) |
+| `output/pop_03_change_pct.png` | Percentage change in population (2020–2025) |
+| `output/pop_04_distributions.png` | Distribution of population values |
+| `output/pop_05_overlay.png` | Population overlay on India basemap |
+
+#### EDA plots — Facebook Relative Wealth Index
+
+| File | Description |
+|---|---|
+| `output/rwi_01_mean_distribution.png` | Distribution of mean RWI values across villages |
+| `output/rwi_02_range.png` | Range of RWI values per village |
+| `output/rwi_03_violin.png` | Violin plot of RWI by state |
+| `output/rwi_04_error.png` | RWI uncertainty / error distribution |
+| `output/rwi_05_num_cells.png` | Number of RWI grid cells per village |
+| `output/village_01_rwi_choropleth.png` | Choropleth map of village-level mean RWI across India |
+| `output/village_02_rwi_distribution.png` | Distribution of village-level RWI |
+
+#### EDA plots — Antyodaya (SHRUG socioeconomic dataset)
+
+| File | Description |
+|---|---|
+| `output/anty_01_missing.png` | Missing data overview across Antyodaya variables |
+| `output/anty_02_demographics.png` | Demographic indicators distribution |
+| `output/anty_03_agriculture.png` | Agricultural indicators distribution |
+| `output/anty_04_infrastructure.png` | Infrastructure indicators distribution |
+| `output/anty_05_education.png` | Education indicators distribution |
+| `output/anty_06_health.png` | Health indicators distribution |
+| `output/anty_07_welfare.png` | Welfare indicators distribution |
+| `output/anty_08_correlation.png` | Correlation matrix across Antyodaya indicators |
