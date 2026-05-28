@@ -3,6 +3,18 @@ Finding India's top economically growing villages using multi-indicator remote s
 
 ---
 
+## Code
+
+| File | Description |
+|---|---|
+| `code/score_villages.py` | Main scoring pipeline. Loads village polygons, runs batched zonal statistics across 6 rasters, joins Facebook RWI, computes log-ratio change signals, applies pre-filters and corroboration filter, normalises and scores with both weighted and equal-weight composites, applies state-stratified selection, and saves all outputs. Run from the project root: `python3 code/score_villages.py` |
+| `code/map_top100.py` | Spatial mapping script. Reads the top 100 outputs and generates 6 maps comparing the weighted and equal-weights scoring methods, including side-by-side India maps, overlap/divergence map, state breakdown bar chart, and score scatter plot. Uses contextily (CartoDB Positron basemap) and 30km polygon buffers for visibility at India scale. Run from the project root: `python3 code/map_top100.py` |
+| `code/visualise_join_data.ipynb` | Exploratory data analysis notebook. Contains EDA sections for all five datasets: Facebook RWI (distributions, violin, error, cell counts), GHS-POP 2020 & 2025 (maps, change maps, distributions), GHS Built-up 2020 & 2025, VIIRS NTL 2021 & 2025, and Antyodaya (521k rows, 169 columns). All figures are saved to `output/`. |
+| `code/gee_ghsl.ipynb` | Google Earth Engine notebook used to download and export the GHS-BUILT-S and GHS-POP rasters for India, clipped and exported as GeoTIFFs to Google Drive. |
+| `code/merge_ghsl.py` | Utility script to merge GEE-exported GHS tile splits (each raster is exported by GEE as multiple tile files) into single merged GeoTIFFs using rasterio. Run once after downloading tiles from Google Drive. |
+
+---
+
 ## Methodology: Identifying Emerging Economic Centres in Rural India
 
 ### Data Sources
